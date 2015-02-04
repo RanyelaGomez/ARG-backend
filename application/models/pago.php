@@ -20,7 +20,7 @@
 			$this->entidad_b     = $_POST['name-bank'];
 			$this->monto   = $_POST['monto-pago'];
 			$this->serial_op      = $_POST['serial'];
-			$this->fecha      = $_POST[' '];
+			$this->fecha      = $_POST['date'];
 			$this->direc_env   = $_POST['mensaje'];
 		
 			$this->db->insert('pago',$this);

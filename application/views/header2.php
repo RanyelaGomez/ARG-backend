@@ -43,8 +43,9 @@
                         </button>
 
                         <!-- SUBMENU DEL USUARIO REGISTRADO - SALIR -->
+                        
                         <ul class="dropdown-menu" role="menu" aria-labelledby="submenu-registrado">
-                          <li role="presentation"><a role="menuitem" tabindex="-1" href="actualizar-datos.php">Actualizar Datos</a></li>
+                          <li role="presentation"><a role="menuitem" tabindex="-1" href="<?= site_url('principal/actualizar') ?>">Actualizar Datos</a></li>
                           <li role="presentation"><a role="menuitem" tabindex="-1" href="<?= site_url('principal/logout') ?>">Salir</a></li>
                         </ul>
 

@@ -154,5 +154,24 @@ class Principal extends CI_Controller{
 		}
 		redirect(site_url('principal/index'),'refresh');
 	}
+
+		public function actualizar(){ 
+		    $this->load->view('header2',$this->Datos);
+			$this->load->view('actualizar-datos',$this->Datos);
+			$this->load->view('footer',$this->Datos);
+			$this->load->view('footer_common',$this->Datos);
+		if (isset($_POST['email'])){			
+			$this->load->model('update');				
+			$this->datos['ex'] = $this->update->out_update($_POST,1);			
+		}
+
+					
+	}
+
+
+
+   
+
+
 }
 

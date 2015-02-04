@@ -92,16 +92,17 @@
                                         <div class="col-xs-9 col-sm-9 col-md-9 ">
                                             <div class="seccion-documento">                                                
                                                 <select id="documento" name="doc">
-                                                  <option value="">C.I</option>
-                                                  <option value="opc2">R.I.F</option>                                                  
+                                                  <option value="C.I">C.I</option>
+                                                  <option value="R.I.F">R.I.F</option>                                                  
                                                 </select>
 
                                                 <select id="documento2" name="doc2">
-                                                  <option value="">V</option>
-                                                  <option value="sex1">E</option>
+                                                  <option value="V">V</option>
+                                                  <option value="E">E</option>
                                                 </select>
 
                                                 <input type="text" name="documento-identidad" required="required" id="documento-identidad">
+                                               
                                             </div>
                                         </div>
                                   </div>
@@ -110,7 +111,9 @@
                                       <div class="col-sm-12 col-md-8">
                                           <div class="btn-inscripcion">
                                               <input type="submit" value="Inscribirme" id="boton-inscribirme" onClick="boton_inscribirme()">
+                                               
                                           </div>
+
                                       </div>   
                                   </div>
                             </div>
