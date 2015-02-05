@@ -9,7 +9,7 @@
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
                     <button class="btn btn-primary botones-principales-carrito" id="mercadopago-carrito">Pagar con MercadoPago</button>
-                    <button class="btn btn-primary botones-principales-carrito" data-toggle="modal" data-target=".modal-datos-de-pago">Datos de Pago</button>
+                    <button class="btn btn-primary botones-principales-carrito" data-toggle="modal" data-target=".modal-datos-de-pago" id="datos-pago" >Datos de Pago</button>
                     <!--
                           MODAL 1: CARRITO ENVIO DE DATOS DE PAGO 
                         -->

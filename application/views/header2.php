@@ -103,7 +103,7 @@
                                 <li id="ultimas-opciones"><a href="#">Enero - Febrero (2015)</a></li>
                               </ul>
                           </li>
-                          <li><a href="<?=site_url('principal/contacto') ?>">CONTACTO</a></li>
+                          <li id="btn-contacto"><a href="<?=site_url('principal/contacto') ?>">CONTACTO</a></li>
                       </ul>
                   </nav>
 
@@ -161,7 +161,7 @@
                             <li id="ultimas-opciones"><a href="#">Enero - Febrero (2015)</a></li>
                           </ul>
                         </li>
-                        <li><a href="<?=site_url('principal/contacto') ?>">CONTACTO</a></li>
+                        <li id="btn-contacto"><a href="<?=site_url('principal/contacto') ?>">CONTACTO</a></li>
 
                       </ul>
                     </div><!-- /.navbar-collapse -->

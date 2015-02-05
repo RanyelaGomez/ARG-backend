@@ -2,7 +2,14 @@
 	
 class update extends CI_Model
 {
-	private $table = 'items';
+	var $nombre 	= "";
+	var $apellido 	= "";
+	var $email 		= "";
+	var $repetir_email= "";
+	var $telefono   = "";
+	var $contrasena = "";
+	var $documento  = "";
+	
 
 	function __construct()
 	{
@@ -11,17 +18,32 @@ class update extends CI_Model
 
 
 
-	function out_update($post, $op) {
-		if($op){
-	        $this->db->where('email', $post['email']);
-	        $query = $this->db->get('persona');
+	function update() {
+		if($_POST){
+			$data = array(
+			'nombre' => $_POST['nombre'],
+			'apellido' => $_POST['apellido'],
+			'email'=> $this->session->userdata['email'],
+		    'telefono'=> $_POST['phone'],
+			'contrasena' => $_POST['password'],
+			'documento' => $_POST['doc'].$_POST['doc2'].$_POST['documento-identidad'],
+			);
+			
+
+			$this->db->where('email', $this->session->userdata['email']);
+			$this->db->update('persona', $data); 
+			
+			redirect(site_url('principal/index'), 'refresh');
+
+			
+	      
+	   	}
+	    else{
+	    	$query = $this->db->get_where('persona',array('email' => $this->session->userdata['email']));
+     		
 	        $fila = $query->row();
-	        return $fila;
-	    }
-     	else{
-     		$this->db->where('email', $post['email']);
-			$this->db->update('persona', $post); 
+	        return $fila; 
      	}
+     }
  }
 
-  

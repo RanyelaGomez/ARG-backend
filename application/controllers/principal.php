@@ -15,6 +15,9 @@ class Principal extends CI_Controller{
         $this->load->library('facebook', $fb_config);
         $this->Datos['logout_url'] = $this->facebook->getLogoutUrl();
         $this->Datos['login_url'] = $this->facebook->getLoginUrl();
+        
+       		 
+       				
 	}
 	public function index()
 	{
@@ -36,13 +39,15 @@ class Principal extends CI_Controller{
             }
         }
 
-       
+
+
           
    
 
 
 		if((isset($this->session->userdata['email'])))
-		{			
+		{	$this->load->model('producto');
+			$this->Datos['productos'] = $this->producto->all();
 			$this->load->view('header2',$this->Datos); 
 			$this->load->view('index',$this->Datos); 
 			$this->load->view('footer',$this->Datos); 
@@ -50,7 +55,8 @@ class Principal extends CI_Controller{
 		}
 		else{
 			if(!isset($_POST['email'])){
-
+				$this->load->model('producto');
+				$this->Datos['productos'] = $this->producto->all();
 				$this->load->view('header',$this->Datos); 
 				$this->load->view('index',$this->Datos); 
 				$this->load->view('footer',$this->Datos); 
@@ -71,7 +77,7 @@ class Principal extends CI_Controller{
 					redirect(site_url('principal/index'), 'refresh');
 				}
 				else{
-					echo "error";
+					redirect('principal/error');
 				}
 			}
 			
@@ -156,17 +162,24 @@ class Principal extends CI_Controller{
 	}
 
 		public function actualizar(){ 
+			$this->load->model('update');				
+			$this->Datos['ex'] = $this->update->update();	
 		    $this->load->view('header2',$this->Datos);
 			$this->load->view('actualizar-datos',$this->Datos);
 			$this->load->view('footer',$this->Datos);
 			$this->load->view('footer_common',$this->Datos);
-		if (isset($_POST['email'])){			
-			$this->load->model('update');				
-			$this->datos['ex'] = $this->update->out_update($_POST,1);			
+			if($_POST){
+				$this->Datos['ex'] = $this->update->update();
+			}
+					
 		}
 
-					
-	}
+		public function error(){
+			
+			$this->load->view('error_404',$this->Datos);
+			
+			$this->load->view('footer_common',$this->Datos);
+		}
 
 
 

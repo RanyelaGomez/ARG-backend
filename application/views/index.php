@@ -16,10 +16,10 @@
                             <img src="<?= $recursos ?>/img/slide2.jpg" class="adaptar">
                         </div>
                         <div class="item">
-                            <img src="<?= $recursos ?>/img/slide1.jpg" class="adaptar">
+                            <img src="<?= $recursos ?>/img/slide3.jpg" class="adaptar">
                         </div>
                         <div class="item">
-                            <img src="<?= $recursos ?>/img/slide2.jpg" class="adaptar">
+                            <img src="<?= $recursos ?>/img/slide4.jpg" class="adaptar">
                         </div>
                 </div>
 
@@ -61,128 +61,46 @@
             </div>
         </div>
 
-            <!--
-                PRODUCTOS
-            -->
+        <?php
+
+         $total = $productos->num_rows(); 
+
+
+         ?>
         <div class="carousel" data-ride="carousel" id="carousel-productos-index">
             <div class="carousel-inner">
                 <div class="item active">
                     <div class="container listado-productos">
                         <div class="row">
                             <!-- PRODUCTO 1 -->
+                               
+                             <?php 
+                                $i = 0;
+                                for($i =0; $i < 8; $i++): 
+                                
+                                if($i % 4 == 0){
+                                    echo "</div>";
+                                    echo "<div class=\"row hidden-xs\">";
+                                }
+                                $row = $productos->row($i);
+                             ?>
+
+                            
                             <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 producto">
                                 <div class="empaquetado">
                                     <div class="etiqueta-nuevo">
                                         <span>NUEVO</span>
                                     </div>
-                                    <a href="#"><figure><img src="<?= $recursos ?>/img/producto1.jpg"></figure></a>
-                                    <span class="temporada">Temporada <strong>Julio-Agosto</strong></span>
+                                    <a href="#"><figure><img src="<?=$recursos.$row->imagen?>"></figure></a>
+                                    <span class="temporada">Temporada <strong><?= $row->temporada?></strong></span>
                                     <div class="prenda-stock">
-                                        <span class="prenda">Pulsera Mod-01</span>
+                                        <span class="prenda"><?= $row->tipo ?></span>
                                         <span class="stock-etiqueta">STOCK</span>
                                     </div>
-                                    <span class="precio">Bs.300</span>
+                                    <span class="precio"><?= $row->precio ?></span>
                                 </div>
                             </div>
-
-                            <!-- PRODUCTO 2 -->
-                            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 producto">
-                                <div class="empaquetado">
-                                    <a href="#"><figure><img src="<?= $recursos ?>/img/producto2.jpg" alt=""></figure></a>
-                                    <span class="temporada">Temporada <strong>Julio-Agosto</strong></span>
-                                    <div class="prenda-stock">
-                                        <span class="prenda">Pulsera Mod-02</span>
-                                        <span class="stock-etiqueta">STOCK</span>
-                                    </div>
-                                    <span class="precio">Bs.450</span>
-                                </div>
-                            </div>
-
-                            <!-- PRODUCTO 3 -->
-                            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 producto">
-                                <div class="empaquetado">
-                                    <div class="etiqueta-nuevo">
-                                        <span>NUEVO</span>
-                                    </div>
-                                    <a href="#"><figure><img src="<?= $recursos ?>/img/producto3.jpg" alt=""></figure></a>
-                                    <span class="temporada">Temporada <strong>Septiembre-Octubre</strong></span>
-                                    <div class="prenda-stock">
-                                        <span class="prenda">Gargantilla Mod-01</span>
-                                        <span class="stock-etiqueta">STOCK</span>
-                                    </div>
-                                    <span class="precio">Bs.600</span>
-                                </div>
-                            </div>
-
-                            <!-- PRODUCTO 4 -->
-                            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 producto prod-oculto">
-                                <div class="empaquetado">
-                                    <a href="#"><figure><img src="<?= $recursos ?>/img/producto4.jpg" alt=""></figure></a>
-                                    <span class="temporada">Temporada <strong>Septiembre-Octubre</strong></span>
-                                    <div class="prenda-stock">
-                                        <span class="prenda">Gargantilla Mod-02</span>
-                                        <span class="stock-etiqueta">STOCK</span>
-                                    </div>
-                                    <span class="precio">Bs.530</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row hidden-xs">
-                            <!-- PRODUCTO 5 -->
-                            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 producto">
-                                <div class="empaquetado">
-                                    <a href="#"><figure><img src="<?= $recursos ?>/img/producto5.jpg"></figure></a>
-                                    <span class="temporada">Temporada <strong>Julio-Agosto</strong></span>
-                                    <div class="prenda-stock">
-                                        <span class="prenda">Pulsera Mod-03</span>
-                                        <span class="stock-etiqueta">STOCK</span>
-                                    </div>
-                                    <span class="precio">Bs.550</span>
-                                </div>
-                            </div>
-
-                            <!-- PRODUCTO 6 -->
-                            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 producto">
-                                <div class="empaquetado">
-                                    <a href="#"><figure><img src="<?= $recursos ?>/img/producto6.jpg" alt=""></figure></a>
-                                    <span class="temporada">Temporada <strong>Julio-Agosto</strong></span>
-                                    <div class="prenda-stock">
-                                        <span class="prenda">Pulsera Mod-04</span>
-                                        <span class="stock-etiqueta">STOCK</span>
-                                    </div>
-                                    <span class="precio">Bs.300</span>
-                                </div>
-                            </div>
-
-                            <!-- PRODUCTO 7 -->
-                            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 producto">
-                                <div class="empaquetado">
-                                    <a href="#"><figure><img src="<?= $recursos ?>/img/producto7.jpg" alt=""></figure></a>
-                                    <span class="temporada">Temporada <strong>Septiembre-Octubre</strong></span>
-                                    <div class="prenda-stock">
-                                        <span class="prenda">Pulsera Mod-05</span>
-                                        <span class="stock-etiqueta">STOCK</span>
-                                    </div>
-                                    <span class="precio">Bs.400</span>
-                                </div>
-                            </div>
-
-                            <!-- PRODUCTO 8 -->
-                            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 producto prod-oculto">
-                                <div class="empaquetado">
-                                    <div class="etiqueta-nuevo">
-                                        <span>NUEVO</span>
-                                    </div>
-                                    <a href="#"><figure><img src="<?= $recursos ?>/img/producto8.jpg" alt=""></figure></a>
-                                    <span class="temporada">Temporada <strong>Septiembre-Octubre</strong></span>
-                                    <div class="prenda-stock">
-                                        <span class="prenda">Gargantilla Mod-03</span>
-                                        <span class="stock-etiqueta">STOCK</span>
-                                    </div>
-                                    <span class="precio">Bs.450</span>
-                                </div>
-                            </div>
+                            <?php endfor; ?>                                         
                         </div>
                     </div>
                 </div>
@@ -190,120 +108,38 @@
                 <div class="item">
                     <div class="container listado-productos">
                         <div class="row">
-                            <!-- PRODUCTO 9 -->
+                              
+                             <?php 
+                                $i = 0;
+                                for($i =8; $i < 16; $i++): 
+                         
+                                if($i % 4==0){
+                                    echo "</div>";
+                                    echo "<div class=\"row hidden-xs\">";
+                                }
+                                 $row = $productos->row($i);
+                                
+                             ?>
+
                             <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 producto">
                                 <div class="empaquetado">
                                     <div class="etiqueta-nuevo">
                                         <span>NUEVO</span>
                                     </div>
-                                    <a href="#"><figure><img src="<?= $recursos ?>/img/producto4.jpg"></figure></a>
-                                    <span class="temporada">Temporada <strong>Julio-Agosto</strong></span>
+                                    <a href="#"><figure><img src="<?=$recursos.$row->imagen?>"></figure></a>
+                                    <span class="temporada">Temporada <strong><?= $row->temporada?></strong></span>
                                     <div class="prenda-stock">
-                                        <span class="prenda">Pulsera Mod-01</span>
+                                        <span class="prenda"><?= $row->tipo ?></span>
                                         <span class="stock-etiqueta">STOCK</span>
                                     </div>
-                                    <span class="precio">Bs.300</span>
+                                    <span class="precio"><?= $row->precio ?></span>
                                 </div>
                             </div>
+                             <?php endfor; ?>  
+                           
 
-                            <!-- PRODUCTO 10 -->
-                            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 producto">
-                                <div class="empaquetado">
-                                    <a href="#"><figure><img src="<?= $recursos ?>/img/producto5.jpg" alt=""></figure></a>
-                                    <span class="temporada">Temporada <strong>Julio-Agosto</strong></span>
-                                    <div class="prenda-stock">
-                                        <span class="prenda">Pulsera Mod-02</span>
-                                        <span class="stock-etiqueta">STOCK</span>
-                                    </div>
-                                    <span class="precio">Bs.450</span>
-                                </div>
-                            </div>
-
-                            <!-- PRODUCTO 11 -->
-                            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 producto">
-                                <div class="empaquetado">
-                                    <div class="etiqueta-nuevo">
-                                        <span>NUEVO</span>
-                                    </div>
-                                    <a href="#"><figure><img src="<?= $recursos ?>/img/producto8.jpg" alt=""></figure></a>
-                                    <span class="temporada">Temporada <strong>Septiembre-Octubre</strong></span>
-                                    <div class="prenda-stock">
-                                        <span class="prenda">Gargantilla Mod-01</span>
-                                        <span class="stock-etiqueta">STOCK</span>
-                                    </div>
-                                    <span class="precio">Bs.600</span>
-                                </div>
-                            </div>
-
-                            <!-- PRODUCTO 12 -->
-                            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 producto prod-oculto">
-                                <div class="empaquetado">
-                                    <a href="#"><figure><img src="<?= $recursos ?>/img/producto7.jpg" alt=""></figure></a>
-                                    <span class="temporada">Temporada <strong>Septiembre-Octubre</strong></span>
-                                    <div class="prenda-stock">
-                                        <span class="prenda">Gargantilla Mod-02</span>
-                                        <span class="stock-etiqueta">STOCK</span>
-                                    </div>
-                                    <span class="precio">Bs.530</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row hidden-xs">
-                            <!-- PRODUCTO 13 -->
-                            <div class="col-sm-3 col-md-3 col-lg-3 producto">
-                                <div class="empaquetado">
-                                    <a href="#"><figure><img src="<?= $recursos ?>/img/producto6.jpg"></figure></a>
-                                    <span class="temporada">Temporada <strong>Julio-Agosto</strong></span>
-                                    <div class="prenda-stock">
-                                        <span class="prenda">Pulsera Mod-03</span>
-                                        <span class="stock-etiqueta">STOCK</span>
-                                    </div>
-                                    <span class="precio">Bs.550</span>
-                                </div>
-                            </div>
-
-                            <!-- PRODUCTO 14 -->
-                            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 producto">
-                                <div class="empaquetado">
-                                    <a href="#"><figure><img src="<?= $recursos ?>/img/producto4.jpg" alt=""></figure></a>
-                                    <span class="temporada">Temporada <strong>Julio-Agosto</strong></span>
-                                    <div class="prenda-stock">
-                                        <span class="prenda">Pulsera Mod-04</span>
-                                        <span class="stock-etiqueta">STOCK</span>
-                                    </div>
-                                    <span class="precio">Bs.300</span>
-                                </div>
-                            </div>
-
-                            <!-- PRODUCTO 15 -->
-                            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 producto">
-                                <div class="empaquetado">
-                                    <a href="#"><figure><img src="<?= $recursos ?>/img/producto3.jpg" alt=""></figure></a>
-                                    <span class="temporada">Temporada <strong>Septiembre-Octubre</strong></span>
-                                    <div class="prenda-stock">
-                                        <span class="prenda">Pulsera Mod-05</span>
-                                        <span class="stock-etiqueta">STOCK</span>
-                                    </div>
-                                    <span class="precio">Bs.400</span>
-                                </div>
-                            </div>
-
-                            <!-- PRODUCTO 16 -->
-                            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 producto">
-                                <div class="empaquetado">
-                                    <div class="etiqueta-nuevo">
-                                        <span>NUEVO</span>
-                                    </div>
-                                    <a href="#"><figure><img src="<?= $recursos ?>/img/producto2.jpg" alt=""></figure></a>
-                                    <span class="temporada">Temporada <strong>Septiembre-Octubre</strong></span>
-                                    <div class="prenda-stock">
-                                        <span class="prenda">Gargantilla Mod-03</span>
-                                        <span class="stock-etiqueta">STOCK</span>
-                                    </div>
-                                    <span class="precio">Bs.450</span>
-                                </div>
-                            </div>
+                           
+                          
                         </div>
                     </div>
                 </div>
@@ -321,9 +157,8 @@
                     </div>
                     <div class="formulario-newsletter">
                         <form action="//accesoriosranyelagomez.us10.list-manage.com/subscribe/post?u=6061cbb67fbad5bd115e37b66&amp;id=24ec7451a8" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-                           
                             <input type="email" name="email" placeholder="@Email" required="required" id="email3">
-                            <input type="submit" value="Subscribe" name="subscribe" id="boton-suscribir" onClick="boton_suscribir()">
+                            <input type="submit" value="SUSCRIBETE" id="boton-suscribir" onClick="boton_suscribir()">
                         </form>
                     </div>
                 </div>
