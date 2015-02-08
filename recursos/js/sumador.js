@@ -1,4 +1,4 @@
-/* **************************
+/* ********************************************
 ********** SCROLL *********/
 $(document).ready(
     function() { 
@@ -49,30 +49,4 @@ $(document).ready(function(){
         $(this).parents('.div-articulo').remove();
         return false;
     });
-});
-
-/* **************************
-********** ENALCES *********/
-$("#ultimo-categoria a").click(function(){
-    // para interrumpir y eliminar el comportamiento del enlace, 
-    // hacemos que el enlace retorne false. 
-    return false;
-});
-
-$("#m-j a").click(function(){
-    // para interrumpir y eliminar el comportamiento del enlace, 
-    // hacemos que el enlace retorne false. 
-    return false;
-});
-
-$(".opcion-principal a").click(function(){
-    // para interrumpir y eliminar el comportamiento del enlace, 
-    // hacemos que el enlace retorne false. 
-    return false;
-});
-
-$("#home-icon").click(function(){
-    // para interrumpir y eliminar el comportamiento del enlace, 
-    // hacemos que el enlace retorne false. 
-    return false;
 });

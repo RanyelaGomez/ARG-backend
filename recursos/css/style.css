@@ -26,21 +26,10 @@
     font-family: 'Roddy-Bold';
     src: url('../roddybold_0.ttf') format('truetype');
 }
+
 figure{
     margin: 0;
     vertical-align: top;
-}
-
-/********************** PRUEBA USABILIDAD *************/
-#btn-contacto, .twitter-registro, .facebook-registro, .contrasena a, .newsletter, #mercadopago-carrito, #datos-pago, .opcion-principal ul{
-    display: none;
-}
-
-.opcion-principal a, .opcion-principal a:hover, #home-icon span, #ultimo-categoria a, #ultimo-categoria a:hover, #m-j a, #m-j a:hover{
-    color: #888888 !important;
-    border: 0 !important;
-    cursor: default;
-
 }
 
 
@@ -165,10 +154,19 @@ figure{
     float: right;
 }
 
+
+
+
+
+
+
 /****************************************/
 #home-icon, #home-icon:hover{
     border: 2px solid transparent;
 }
+
+.opcion-principal 
+
 
 /* ----- VENTANA MODAL LOGIN -----*/
 #ingresa{
@@ -756,7 +754,7 @@ footer{
 /************************************************************/
 
 .titulo-carrito{
-    background-color: #199a80;
+    background-color: #1b3c45;
 }
 
 .usuario-carrito-banner{
@@ -1523,6 +1521,32 @@ footer{
     border: none;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*******************************************************************
                     MEDIAS QUERIES
 *******************************************************************/
@@ -1533,11 +1557,6 @@ footer{
         INDEX
     **********************/
     header{
-        text-align: center;
-    }
-
-    .botones-superiores{
-        float: none;
         text-align: center;
     }
 
@@ -1552,7 +1571,6 @@ footer{
 
     #main-logo-mobile a img{
         width: 14em;
-        margin-left: 0;
     }
 
     .navegacion-mobile{
@@ -1585,11 +1603,6 @@ footer{
 
     #miSlide a span{
         margin-top: -0.5em;
-    }
-
-    #miSlide ol{
-        position: absolute;
-        top: 6.6em;
     }
 
     h1{
@@ -1644,10 +1657,6 @@ footer{
 
     .letritas h3{
         font-size: 1.5em;
-    }
-
-    .formulario-newsletter form input{
-        width: 13em;
     }
 
     .imagen-ciencia{
