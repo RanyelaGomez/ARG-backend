@@ -8,7 +8,9 @@ class update extends CI_Model
 	var $repetir_email= "";
 	var $telefono   = "";
 	var $contrasena = "";
-	var $documento  = "";
+	var $doc1  = "";
+	var $doc2  = "";
+	var $doc3  = "";
 	
 
 	function __construct()
@@ -26,7 +28,9 @@ class update extends CI_Model
 			'email'=> $this->session->userdata['email'],
 		    'telefono'=> $_POST['phone'],
 			'contrasena' => $_POST['password'],
-			'documento' => $_POST['doc'].$_POST['doc2'].$_POST['documento-identidad'],
+			'doc1' => $_POST['doc1'],
+			'doc2' => $_POST['doc2'],
+			'doc3' => $_POST['documento-identidad']
 			);
 			
 

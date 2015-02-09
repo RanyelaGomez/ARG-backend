@@ -9,7 +9,7 @@
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
                     <button class="btn btn-primary botones-principales-carrito" id="mercadopago-carrito">Pagar con MercadoPago</button>
-                    <button class="btn btn-primary botones-principales-carrito" data-toggle="modal" data-target=".modal-datos-de-pago" id="datos-pago" >Datos de Pago</button>
+                    <button class="btn btn-primary botones-principales-carrito" data-toggle="modal" data-target=".modal-datos-de-pago" id="datos-pago" >Comprar</button>
                     <!--
                           MODAL 1: CARRITO ENVIO DE DATOS DE PAGO 
                         -->
@@ -22,7 +22,7 @@
                                 </div>
 
                                 <div class="titulo-DatosDePago">
-                                  <span id="datos-title">Datos de Pago</span>
+                                  <span id="datos-title">Comprar</span>
                                   <span id="datos-complemento">Te enviaremos a tu email nuestros <strong>Datos Bancarios</strong> <br>¿Deseas Recibirlos?</span>
                                 </div>
                                          
@@ -30,7 +30,7 @@
                                     <div class="col-sm-12 col-md-12">
                                         <div class="btn-DatosDePago">
                                           <button class="btn btn-primary" id="boton-DatosDePago">Confirmar</button>
-                                          <button class="btn btn-primary" id="boton-DatosDePago-regresar">Regresar</button>
+                                          <button class="btn btn-primary" data-dismiss="modal" id="boton-DatosDePago-regresar">Regresar</button>
                                         </div>
                                     </div>   
                                 </div>                                                     
@@ -40,7 +40,7 @@
                         <!-- FIN COMPONENTE MODAL -->
 
 
-                    <button class="btn btn-primary botones-principales-carrito" id="btn-xs-400" data-toggle="modal" data-target=".modal-formalizar-pago">Formalizar Pago</button>
+                    <button class="btn btn-primary botones-principales-carrito" id="f-pago" data-toggle="modal" data-target=".modal-formalizar-pago">Formalizar Pago</button>
 
                     <!--
                           MODAL 2: FORMALIZAR PAGOS 
@@ -62,18 +62,23 @@
                                         <form action="<?= site_url('principal/pago')?>" method="POST" id="formulario-FormalizarPago">      
                                             <div class="row">
                                                   <div class="col-xs-4 col-sm-4 col-md-4 text-center">
-                                                      <div class="etiqueta-formulario">
+                                                      <div class="etiqueta-formulario-formalizar">
                                                           <span>Entidad Bancaria</span>
                                                       </div>
                                                   </div>
                                                   <div class="col-xs-8 col-sm-8 col-md-8">
-                                                      <input type="text" name="name-bank"  required="required" id="nombre-banco">
+                                                      <select id="entidad-bancaria" name="doc">
+                                                      <option value=""></option>
+                                                      <option value="opc1">Mercantil</option>
+                                                     <option value="opc2">Banesco</option>
+                                                     <option value="opc3">Bancaribe</option>                                                  
+                                                     </select>
                                                   </div>
                                             </div>
 
                                             <div class="row">
                                                   <div class="col-xs-4 col-sm-4 col-md-4">
-                                                      <div class="etiqueta-formulario">
+                                                      <div class="etiqueta-formulario-formalizar">
                                                           <span>Monto</span>
                                                       </div>
                                                   </div>
@@ -84,7 +89,7 @@
 
                                             <div class="row">
                                                   <div class="col-xs-4 col-sm-4 col-md-4">
-                                                      <div class="etiqueta-formulario">
+                                                      <div class="etiqueta-formulario-formalizar">
                                                           <span>Serial de Operacion</span>
                                                       </div>
                                                   </div>
@@ -95,7 +100,7 @@
 
                                             <div class="row">
                                                   <div class="col-xs-4 col-sm-4 col-md-4">
-                                                      <div class="etiqueta-formulario">
+                                                      <div class="etiqueta-formulario-formalizar">
                                                           <span>Fecha</span>
                                                       </div>
                                                   </div>
@@ -118,7 +123,7 @@
 
                                             <div class="row direccion-envio">
                                                   <div class="col-xs-4 col-sm-4 col-md-4">
-                                                      <div class="etiqueta-formulario">
+                                                      <div class="etiqueta-formulario-formalizar">
                                                           <span>Direccion de Envio</span>
                                                       </div>
                                                   </div>
@@ -143,7 +148,7 @@
 
 
                     <div class="total-carrito">
-                        <span>Total: <strong>3.000 Bs</strong></span>
+                        <span> <strong>Total: 3.000 Bs</strong></span
                     </div> 
                 </div>
             </div>
@@ -356,3 +361,6 @@
         </div>
 
     </section>
+
+    <!-- IR AL CIELO -->
+    <span class="ir-arriba glyphicon glyphicon-chevron-up"></span>

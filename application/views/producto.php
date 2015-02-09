@@ -19,7 +19,7 @@
     <![endif]-->
   </head>
   <body>
-        <?php include 'inc/header.php'; ?>
+       
     
     <section class="titulo-principal-categoria text-center">
         <h2>Temporada Julio - Agosto</h2>
@@ -124,13 +124,15 @@
                                                       </div>
                                                   </div>
                                                   <div class="col-md-7">
+                                                  <span class="ola-ke-ase">Cantidad:</span>
                                                     <div class="cantidad-ventana-comprar">
-                                                        <span>Cantidad:</span>
+                                                        <!-- SUMADOR -->
                                                         <div class="stock-quantity-inputs" data-component="quantitySelector" id="contador-ventana-comprar">
                                                             <input type="button" class="stock-quantity-increments" name="pop" value="-" disabled="">
                                                             <input type="number" id="productStockQuantity" class="stock-quantity-input" data-validate="number" name="quantity" min="1" max="9999" title="Cantidad de Unidades" value="1">
                                                             <input type="button" class="stock-quantity-increments" name="push" value="+">
                                                        </div>
+                                                       <!-- FIN SUMADOR --> 
                                                     </div>
 
                                                     <div class="email-ventana-comprar">
@@ -265,7 +267,9 @@
   
 
   </body>
-  <?php include 'inc/footer.php'; ?>
-  <?php include 'inc/footer_common.php'; ?>
+
+  <!-- IR AL CIELO -->
+    <span class="ir-arriba glyphicon glyphicon-chevron-up"></span>
+ 
   
 </html>

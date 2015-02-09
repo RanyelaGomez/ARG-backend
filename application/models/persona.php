@@ -7,7 +7,9 @@
 		var $repetir_email= "";
 		var $telefono   = "";
 		var $contrasena = "";
-		var $documento  = "";
+		var $doc1  = "";
+		var $doc2  = "";
+		var $doc3  = "";
 		
 		
 
@@ -15,14 +17,16 @@
 			parent::__contruct();
 		}
 		function registrar(){
-			$this->nombre     = $_POST['nombre'];
-			$this->apellido   = $_POST['apellido'];
-			$this->email      = $_POST['email'];
-			$this->repetir_email      = $_POST['email1'];
-			$this->telefono   = $_POST['phone'];
-			$this->contrasena = $_POST['password'];
-			$this->documento  = $_POST['doc'].$_POST['doc2'].$_POST['documento-identidad'];
+			$this->nombre     		= $_POST['nombre'];
+			$this->apellido   		= $_POST['apellido'];
+			$this->email      		= $_POST['email'];
+			$this->telefono   		= $_POST['phone'];
+			$this->contrasena 		= $_POST['password'];
+			$this->doc1  			= $_POST['doc'];
+			$this->doc2				= $_POST['doc2'];
+			$this->doc3				= $_POST['documento-identidad'];
 			$this->db->insert('persona',$this);
+			
 		}
 
 	}

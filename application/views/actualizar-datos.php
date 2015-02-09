@@ -88,23 +88,38 @@
                                               </div>
                                               <div class="col-xs-9 col-sm-9 col-md-9 ">
                                                   <div class="seccion-documento">                                                
-                                                      <select id="documento" name="doc">
-                                                      
-                                                        <option selected value="C.I">C.I</option>
-                                                   
-                                                        <option selected value="R.I.F">R.I.F</option> 
-                                                                                               
+                                                      <select id="documento" name="doc1">
+                                                        <?php if($ex->doc1 === "C.I"): ?>
+                                                          <option selected value="C.I">C.I</option>
+                                                        <?php else: ?>
+                                                            <option value="C.I">C.I</option>
+                                                       <?php endif; ?> 
+                                                       <?php if($ex->doc1 === "R.I.F"): ?>      
+                                                          <option selected value="R.I.F">R.I.F</option>       
+                                                        <?php else: ?>
+                                                            <option value="R.I.F">R.I.F</option>
+                                                       <?php endif; ?>                          
                                                       </select>
 
-                                                      <select id="documento2" name="doc2">
+                                                       <select id="documento" name="doc2">
+                                                        <?php if($ex->doc1 === "V"): ?>
+                                                          <option selected value="V">V</option>
+                                                        <?php else: ?>
+                                                            <option value="V">V</option>
+                                                       <?php endif; ?> 
+                                                       <?php if($ex->doc1 === "E"): ?>      
+                                                          <option selected value="E">E</option>       
+                                                        <?php else: ?>
+                                                            <option value="E">E</option>
+                                                       <?php endif; ?>                          
+                                                      </select>
+
+
+
                                                     
-                                                        <option selected value="V" >V</option>
-                                               
-                                                        <option selected value="E">E</option>
-                                                       
-                                                      </select>
+                                                      
 
-                                                      <input type="text" name="documento-identidad" required="required" placeholder="1.324.689" id="documento-identidad" value="<?= substr($ex->documento,4) ?>">
+                                                      <input type="text" name="documento-identidad" required="required" placeholder="1.324.689" id="documento-identidad" value="<?= $ex->doc3 ?>">
                                                   </div>
                                               </div>
                                         </div>

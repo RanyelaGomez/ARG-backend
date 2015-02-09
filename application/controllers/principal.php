@@ -37,11 +37,7 @@ class Principal extends CI_Controller{
                 $user = null;
                 error_log($e);
             }
-        }
-
-
-
-          
+        }   
    
 
 
@@ -121,10 +117,6 @@ class Principal extends CI_Controller{
 		
 	}
 
-
-
-
-
 	public function contacto(){
 		if(isset($this->session->userdata['email']))
 			$this->load->view('header2',$this->Datos); 
@@ -181,6 +173,39 @@ class Principal extends CI_Controller{
 			$this->load->view('footer_common',$this->Datos);
 		}
 
+		public function categorias($tipo = null,$temporada = null,$precio = null){
+			if($tipo == null){
+				redirect('principal/error');
+			}
+			else{
+				if($tipo == "Gargantilla"){
+					$this->load->model('gargantilla');
+				    $this->Datos['productos'] = $this->gargantilla->all($tipo,$temporada,$precio);				   
+					$this->load->view('header',$this->Datos);
+					$this->load->view('categorias',$this->Datos);
+					$this->load->view('footer',$this->Datos);
+					$this->load->view('footer_common',$this->Datos);
+				}
+				if($tipo == "Pulsera"){
+					$this->load->model('pulsera');
+				    $this->Datos['productos'] = $this->pulsera->all($tipo,$temporada,$precio);				   
+					$this->load->view('header',$this->Datos);
+					$this->load->view('categorias',$this->Datos);
+					$this->load->view('footer',$this->Datos);
+					$this->load->view('footer_common',$this->Datos);
+				}
+				if($tipo == "Zarcillo"){
+					$this->load->model('zarcillo');
+				    $this->Datos['productos'] = $this->zarcillo->all($tipo,$temporada,$precio);				   
+					$this->load->view('header',$this->Datos);
+					$this->load->view('categorias',$this->Datos);
+					$this->load->view('footer',$this->Datos);
+					$this->load->view('footer_common',$this->Datos);
+				}
+				//
+			}
+			
+		}
 
 
    
