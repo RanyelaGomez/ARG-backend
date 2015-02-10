@@ -7,6 +7,7 @@
 		var $repetir_email= "";
 		var $telefono   = "";
 		var $contrasena = "";
+		var $repetir_contraseña = "";
 		var $doc1  = "";
 		var $doc2  = "";
 		var $doc3  = "";
@@ -20,11 +21,13 @@
 			$this->nombre     		= $_POST['nombre'];
 			$this->apellido   		= $_POST['apellido'];
 			$this->email      		= $_POST['email'];
+			$this->repetir_email      		= $_POST['email1'];
 			$this->telefono   		= $_POST['phone'];
 			$this->contrasena 		= $_POST['password'];
-			$this->doc1  			= $_POST['doc'];
+			$this->repetir_contraseña 		= $_POST['password1'];
+			$this->doc3  			= $_POST['doc'];
 			$this->doc2				= $_POST['doc2'];
-			$this->doc3				= $_POST['documento-identidad'];
+			$this->doc1				= $_POST['documento-identidad'];
 			$this->db->insert('persona',$this);
 			
 		}
