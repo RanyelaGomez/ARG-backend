@@ -39,6 +39,7 @@
             $('#calendario-ConfirmarPago').datetimepicker();
         });
     </script>
+    <script src="<?= $recursos ?>/js/sumador.js"></script>
 
 
 	

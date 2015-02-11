@@ -18,6 +18,18 @@
 			$query = $this->db->get('producto');
 			return $query;
 		}
+		function find($id){
+			$this->db->select('*');
+			$this->db->where('codigo = ', $id); 
+			$query=$this->db->get("producto");			
+			return $query->row();
+		}
+		function todaimagen($id){
+			$this->db->select('*');
+			$this->db->where('codigo = ', $id); 
+			$query=$this->db->get("imagenproducto");			
+			return $query;
+		}
 
 
 

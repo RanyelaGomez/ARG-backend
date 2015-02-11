@@ -79,29 +79,27 @@
                   <nav class="nav-normal">     
                       <ul class="menu-principal">
                           <li ><a href="<?=site_url('principal/index') ?>" id="home-icon"><span class="glyphicon glyphicon-home"></span></a></li>
-                          <li class="opcion-principal"><a href="#">GARGANTILLAS</a>
+                          <li class="opcion-principal"><a href="<?= site_url('principal/categorias/Gargantilla/Marzo')?>">GARGANTILLAS</a>
                                <ul>
-                                <li><a href="#">Agosto</a></li>
-                                <li><a href="#">Septiembre</a></li>
-                                <li><a href="#">Octubre</a></li>
-                                <li><a href="#">Noviembre</a></li>
+                                <li><a href="<?= site_url('principal/categorias/Gargantilla/Enero')?>">Enero</a></li>
+                                <li><a href="<?= site_url('principal/categorias/Gargantilla/Febrero')?>">Febrero</a></li>
+                                <li><a href="<?= site_url('principal/categorias/Gargantilla/Marzo')?>">Marzo</a></li>
+                                
                               </ul>
                           </li>
-                          <li class="opcion-principal"><a href="#">PULSERAS</a>
+                          <li class="opcion-principal"><a href="<?= site_url('principal/categorias/Pulsera/Marzo')?>">PULSERAS</a>
                              <ul>
-                                <li><a href="#">Agosto</a></li>
-                                <li><a href="#">Septiembre</a></li>
-                                <li><a href="#">Octubre</a></li>
-                                <li><a href="#">Noviembre</a></li>
+                                <li><a href="<?= site_url('principal/categorias/Pulsera/Enero')?>">Enero</a></li>
+                                <li><a href="<?= site_url('principal/categorias/Pulsera/Febrero')?>">Febrero</a></li>
+                                <li><a href="<?= site_url('principal/categorias/Pulsera/Marzo')?>">Marzo</a></li>
 
                               </ul>
                           </li>
-                          <li class="opcion-principal"><a href="#">ZARCILLOS</a>
+                          <li class="opcion-principal"><a href="<?= site_url('principal/categorias/Zarcillo/Marzo')?>">ZARCILLOS</a>
                               <ul>
-                                <li><a href="#">Agosto</a></li>
-                                <li><a href="#">Septiembre</a></li>
-                                <li><a href="#">Octubre</a></li>
-                                <li><a href="#">Noviembre</a></li>
+                                <li><a href="<?= site_url('principal/categorias/Zarcillo/Enero')?>">Enero</a></li>
+                                <li><a href="<?= site_url('principal/categorias/Zarcillo/Febrero')?>">Febrero</a></li>
+                                <li><a href="<?= site_url('principal/categorias/Zarcillo/Marzo')?>">Marzo</a></li>
                               </ul>
                           </li>
                           <li id="btn-contacto"><a href="<?=site_url('principal/contacto') ?>">CONTACTO</a></li>

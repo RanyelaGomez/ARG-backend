@@ -7,6 +7,9 @@
     <section class="cuerpo-carrito">
         <div class="container">
             <div class="row">
+            
+
+
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
                     <button class="btn btn-primary botones-principales-carrito" id="mercadopago-carrito">Pagar con MercadoPago</button>
                     <button class="btn btn-primary botones-principales-carrito" data-toggle="modal" data-target=".modal-datos-de-pago" id="datos-pago" >Comprar</button>
@@ -148,7 +151,7 @@
 
 
                     <div class="total-carrito">
-                        <span> <strong>Total: 3.000 Bs</strong></span
+                        <span> <strong>Total: <?= round($suma->sum,2) ?> Bs</strong></span
                     </div> 
                 </div>
             </div>
@@ -156,20 +159,45 @@
 
         <div class="container">
             <div class="row">
+               <?php
+                $total = $carritos->num_rows(); 
+                if($total == 0){
+                  echo "<h1> No hay disponibilidad en este momento </h1>";
+                }
+                $i = 0;
+                $estado="";
+                for($i =0; $i < $total; $i++):
+                  $row = $carritos->row($i);
+          print_r($row);
+                  if($i % 2 == 0){
+                    echo "</div>";
+                    echo "<div class=\"row \">";
+                  }
+
+              ?>
+
+
+
                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 div-articulo">
-                    <div class="articulo-carrito primero">
+                <?php if($i == 0): 
+                        $estado = "active"; 
+                      else:
+                        $estado= "";
+                      endif; 
+                ?>
+                    <div class="articulo-carrito active ">
                         <figure>
                             <a href="#">
-                                <img src="<?= $recursos?>/img/producto1.jpg" alt="">
+                                <img src="<?=$recursos.$row->imagen?>" alt="">
                             </a>
                         </figure>
                         <div class="borrar-articulo-carrito">
                             <a href="javascript:void(0)"><span class="glyphicon glyphicon-remove"></span></a>
                         </div>
                         <div class="datos-articulo-carrito">
-                          <span><strong>Temporada:</strong> Julio-Agosto</span>
-                          <span><strong>Modelo:</strong> Pulsera Mod-01</span>
-                          <span ><strong>Precio:</strong><strong id="precio-carrito"> Bs.300</strong></span>
+                          <span><strong>Temporada:</strong> <?= $row->temporada?></span>
+                          <span><strong>Modelo:</strong> <?= $row->tipo?></span>
+                          <span ><strong>Precio:</strong><strong id="precio-carrito"> Bs.<?= $row->precio?></strong></span>
                           <span>Cantidad: </span>
                           <!-- SUMADOR -->
                             <div class="sumador-carrito">
@@ -177,7 +205,7 @@
                               <span class="input-group-btn data-dwn">
                                   <button class="btn btn-default btn-info" data-dir="dwn"><span class="glyphicon glyphicon-minus"></span></button>
                               </span>
-                              <input type="text" class="form-control text-center" value="1" min="1" max="40" id="sumador-unidades">
+                              <input type="text" class="form-control text-center" value="<?= $row->cantidad?>" min="1" max="40" id="sumador-unidades">
                               <span class="input-group-btn data-up">
                                   <button class="btn btn-default btn-info" data-dir="up"><span class="glyphicon glyphicon-plus"></span></button>
                               </span>
@@ -185,178 +213,18 @@
                           </div>    
                             <!-- FIN SUMADOR -->                           
                         </div> 
-                    </div>                  
+                    </div>  
+                  <?php endfor;?>                
                 </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 div-articulo">
-                    <div class="articulo-carrito">
-                        <figure>
-                            <a href="#">
-                                <img src="<?= $recursos?>/img/producto2.jpg" alt="">
-                            </a>
-                        </figure>
-                        <div class="borrar-articulo-carrito">
-                            <a href="javascript:void(0)"><span class="glyphicon glyphicon-remove"></span></a>
-                        </div>
-                        <div class="borrar-articulo-carrito">
-                            <a href="#"><span class="glyphicon glyphicon-remove"></span></a>
-                        </div>
-                        <div class="datos-articulo-carrito">
-                          <span><strong>Temporada:</strong> Julio-Agosto</span>
-                          <span><strong>Modelo:</strong> Pulsera Mod-02</span>
-                          <span ><strong>Precio:</strong><strong id="precio-carrito"> Bs.300</strong></span>
-                          <span>Cantidad: </span>
-                          <!-- SUMADOR -->
-                          <div class="sumador-carrito">
-                            <div class="input-group number-spinner">
-                              <span class="input-group-btn data-dwn">
-                                  <button class="btn btn-default btn-info" data-dir="dwn"><span class="glyphicon glyphicon-minus"></span></button>
-                              </span>
-                              <input type="text" class="form-control text-center" value="1" min="1" max="40" id="sumador-unidades">
-                              <span class="input-group-btn data-up">
-                                  <button class="btn btn-default btn-info" data-dir="up"><span class="glyphicon glyphicon-plus"></span></button>
-                              </span>
-                            </div>
-                          </div>   
-                          <!-- FIN SUMADOR -->  
-                        </div> 
-                    </div>                  
-                </div>              
+               
 
-            </div>
+             
 
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 div-articulo">
-                    <div class="articulo-carrito">
-                        <figure>
-                            <a href="#">
-                                <img src="<?= $recursos?>/img/producto3.jpg" alt="">
-                            </a>
-                        </figure>
-                        <div class="borrar-articulo-carrito">
-                            <a href="javascript:void(0)"><span class="glyphicon glyphicon-remove"></span></a>
-                        </div>
-                        <div class="datos-articulo-carrito">
-                          <span><strong>Temporada:</strong> Septiembre-Octubre</span>
-                          <span><strong>Modelo:</strong> Gargantilla Mod-01</span>
-                          <span><strong>Precio:</strong><strong id="precio-carrito"> Bs.600</strong></span>
-                          <span>Cantidad: </span>
-                          <!-- SUMADOR -->
-                          <div class="sumador-carrito">
-                            <div class="input-group number-spinner">
-                              <span class="input-group-btn data-dwn">
-                                  <button class="btn btn-default btn-info" data-dir="dwn"><span class="glyphicon glyphicon-minus"></span></button>
-                              </span>
-                              <input type="text" class="form-control text-center" value="1" min="1" max="40" id="sumador-unidades">
-                              <span class="input-group-btn data-up">
-                                  <button class="btn btn-default btn-info" data-dir="up"><span class="glyphicon glyphicon-plus"></span></button>
-                              </span>
-                            </div>
-                          </div>   
-                          <!-- FIN SUMADOR -->  
-                        </div> 
-                    </div>                  
-                </div>
+               
+          
 
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 div-articulo">
-                    <div class="articulo-carrito">
-                        <figure>
-                            <a href="#">
-                                <img src="<?= $recursos?>/img/producto4.jpg" alt="">
-                            </a>
-                        </figure>
-                        <div class="borrar-articulo-carrito">
-                            <a href="javascript:void(0)"><span class="glyphicon glyphicon-remove"></span></a>
-                        </div>
-                        <div class="datos-articulo-carrito">
-                          <span><strong>Temporada:</strong> Septiembre-Octubre</span>
-                          <span><strong>Modelo:</strong> Gargantilla Mod-02</span>
-                          <span><strong>Precio:</strong><strong id="precio-carrito"> Bs.530</strong></span>
-                          <span>Cantidad: </span>
-                          <!-- SUMADOR -->
-                          <div class="sumador-carrito">
-                            <div class="input-group number-spinner">
-                              <span class="input-group-btn data-dwn">
-                                  <button class="btn btn-default btn-info" data-dir="dwn"><span class="glyphicon glyphicon-minus"></span></button>
-                              </span>
-                              <input type="text" class="form-control text-center" value="1" min="1" max="40" id="sumador-unidades">
-                              <span class="input-group-btn data-up">
-                                  <button class="btn btn-default btn-info" data-dir="up"><span class="glyphicon glyphicon-plus"></span></button>
-                              </span>
-                            </div>
-                          </div>   
-                          <!-- FIN SUMADOR -->  
-                        </div> 
-                    </div>                  
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 div-articulo">
-                    <div class="articulo-carrito">
-                        <figure>
-                            <a href="#">
-                                <img src="<?= $recursos?>/img/producto5.jpg" alt="">
-                            </a>
-                        </figure>
-                        <div class="borrar-articulo-carrito">
-                            <a href="javascript:void(0)"><span class="glyphicon glyphicon-remove"></span></a>
-                        </div>
-                        <div class="datos-articulo-carrito">
-                          <span><strong>Temporada:</strong> Julio-Agosto</span>
-                          <span><strong>Modelo:</strong> Pulsera Mod-03</span>
-                          <span><strong>Precio:</strong><strong id="precio-carrito"> Bs.550</strong></span>
-                          <span>Cantidad: </span>
-                          <!-- SUMADOR -->
-                          <div class="sumador-carrito">
-                            <div class="input-group number-spinner">
-                              <span class="input-group-btn data-dwn">
-                                  <button class="btn btn-default btn-info" data-dir="dwn"><span class="glyphicon glyphicon-minus"></span></button>
-                              </span>
-                              <input type="text" class="form-control text-center" value="1" min="1" max="40" id="sumador-unidades">
-                              <span class="input-group-btn data-up">
-                                  <button class="btn btn-default btn-info" data-dir="up"><span class="glyphicon glyphicon-plus"></span></button>
-                              </span>
-                            </div>
-                          </div>  
-                          <!-- FIN SUMADOR -->  
-                        </div> 
-                    </div>                  
-                </div>
-
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 div-articulo">
-                    <div class="articulo-carrito">
-                        <figure>
-                            <a href="#">
-                                <img src="<?= $recursos?>/img/producto6.jpg" alt="">
-                            </a>
-                        </figure>
-                        <div class="borrar-articulo-carrito">
-                            <a href="javascript:void(0)"><span class="glyphicon glyphicon-remove"></span></a>
-                        </div>
-                        <div class="datos-articulo-carrito">
-                          <span><strong>Temporada:</strong> Julio-Agosto</span>
-                          <span><strong>Modelo:</strong> Pulsera Mod-04</span>
-                          <span><strong>Precio:</strong><strong id="precio-carrito"> Bs.300</strong></span>
-                          <span>Cantidad: </span>
-                          <!-- SUMADOR -->
-                          <div class="sumador-carrito">
-                            <div class="input-group number-spinner">
-                              <span class="input-group-btn data-dwn">
-                                  <button class="btn btn-default btn-info" data-dir="dwn"><span class="glyphicon glyphicon-minus"></span></button>
-                              </span>
-                              <input type="text" class="form-control text-center" value="1" min="1" max="40" id="sumador-unidades">
-                              <span class="input-group-btn data-up">
-                                  <button class="btn btn-default btn-info" data-dir="up"><span class="glyphicon glyphicon-plus"></span></button>
-                              </span>
-                            </div>
-                          </div>  
-                          <!-- FIN SUMADOR -->  
-                        </div> 
-                    </div>                  
-                </div>
-            </div>
-
+           
 
         </div>
 

@@ -13,14 +13,22 @@
 			parent::__construct();
 		}
 
-		function all($tipo,$temporada, $precio){
+		function all($tipo,$temporada,$preciomin,$preciomax){
 			$this->db->select('*');
 			if($tipo != null)
 				$this->db->like('tipo',ucwords(strtolower($tipo)));
+			
 			if($temporada != null)
 				$this->db->like('temporada',$temporada);
-			if($precio!= null)
-				$this->db->where('precio > ', $precio); 
+
+			if(($preciomin!= null)&&($preciomax==null))
+				$this->db->where('precio <= ', $preciomin); 
+
+			if(($preciomin!= null)&&($preciomax!=null)){
+				$this->db->where('precio >= ', $preciomin); 
+				$this->db->where('precio <= ', $preciomax);
+			}
+			
 			$query=$this->db->get("producto");			
 			return $query;
 		}
