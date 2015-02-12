@@ -32,7 +32,7 @@
           <?php
             $total = $productos->num_rows(); 
             if($total == 0){
-                redirect('principal/no-encontrado.php');
+                echo "<h1> No hay disponibilidad en este momento </h1>";
             }
             $i = 0;
             for($i =0; $i < $total; $i++):

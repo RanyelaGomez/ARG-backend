@@ -10,9 +10,9 @@
                 <div class="social">
                     <span id="titulo-sociales">¡Siguenos en las Redes Sociales!</span>
                     <div class="social-media">
-                        <a href="#"><img src="<?= $recursos ?>/img/facebook-icon.png" alt=""></a>
-                        <a href="#"><img src="<?= $recursos ?>/img/twitter-icon.png" alt=""></a>
-                        <a href="#"><img src="<?= $recursos ?>/img/instagram-icon.png" alt=""></a>
+                        <a href="https://www.facebook.com/pages/Accesorios-Ranyela-Gomez/1429184814020503?ref=aymt_homepage_panelAccesorios Ranyela Gomez"><img src="<?= $recursos ?>/img/facebook-icon.png" alt=""></a>
+                        <a href="https://twitter.com/Accesoriosrg"><img src="<?= $recursos ?>/img/twitter-icon.png" alt=""></a>
+                        <a href="http://instagram.com/accesorios_ranyelagomez"><img src="<?= $recursos ?>/img/instagram-icon.png" alt=""></a>
                     </div>
                 </div>              
             </div>
@@ -29,5 +29,4 @@
       </div>
     
   </footer>
-
 

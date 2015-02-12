@@ -215,7 +215,11 @@
                             <button class="btn btn-default btn-info actualizar-total">Actualizar Total</button>
                         </div> 
                     </div>                  
-                </div>              
+                </div> 
+                <form>
+                  <input type="hidden" id="codigo" name="codigo" value="<?= $row->idproducto?>">
+                  <input type="hidden" id="email" name="email" value="<?= $this->session->userdata['email']?>"
+                </form>             
                 <?php endfor;?>
             </div>
 

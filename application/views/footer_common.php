@@ -41,5 +41,39 @@
     </script>
     <script src="<?= $recursos ?>/js/sumador.js"></script>
 
+     <script type="text/javascript">
+
+$(document).ready(function(){
+    $('.borrar-articulo-carrito').click(function(){
+        alert($('#codigo').val());
+                alert($('#email').val());
+       var parametros = {
+                "idproducto" : $('#codigo').val(),
+                "email" : $('#email').val(),
+              
+        };
+        $.ajax({
+                data:  parametros,
+                url:   'http://localhost/ARG-backend-master/index.php/ajax/eliminar',
+                type:  'POST',
+                error: function(xhr, textStatus, error){
+      				      console.log(xhr.statusText);
+      				      console.log(textStatus);
+                    console.log(error);
+                }
+                
+               
+        });
+
+       		 $(this).parents('.div-articulo').remove();
+
+       
+       //
+        
+    });
+});
+
+                  </script>
+
 
 	
