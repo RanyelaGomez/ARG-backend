@@ -14,9 +14,28 @@
 			parent::__construct();
 		}
 
-		function all(){
-			$query = $this->db->get('producto');
-			return $query;
+		function all($opcion = null){
+			if($opcion == null){
+
+				$query = $this->db->get('producto');
+				return $query;
+			}
+			if($opcion == "todos"){
+				$query = $this->db->get('producto');
+				return $query;
+			}
+
+			if($opcion == "mnuevos"){
+				$this->db->where('nuevo = ', "1"); 
+				$query = $this->db->get('producto');
+				return $query;
+			}
+
+			if($opcion == "mvendidos"){
+				$this->db->where('nuevo = ', "0"); 
+				$query = $this->db->get('producto');
+				return $query;
+			}
 		}
 		function find($id){
 			$this->db->select('*');

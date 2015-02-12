@@ -48,9 +48,10 @@
             <div class="row">
                 <div class="col-sm-12 col-md-12">
                     <ul class="categorias-index">
-                        <li id="primero-categoria"><a href="#">TODOS</a></li>
-                        <li id="m-j"><a href="#">MÁS VENDIDO</a></li>
-                        <li id="ultimo-categoria"><a href="#">MÁS NUEVO</a></li>
+                        <li id="primero-categoria"><a href="<?= site_url('principal/index/todos')?>">TODOS</a></li>
+                        <li id="m-j"><a href="<?=site_url('principal/index/mvendidos')?>">MÁS VENDIDO</a></li>
+                        <li id="ultimo-categoria"><a href="<?=site_url('principal/index/mnuevos')?>">MÁS NUEVO</a></li>
+                    </ul>
                     </ul>
 
                     <div class="controles-index">

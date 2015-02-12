@@ -21,7 +21,7 @@
         -->
         <article class="contacto-formulario">
         
-            <form action="<?= site_url('principal/contacto')?>" method="POST" id="contacto-formulario">
+            <form action="<?= site_url('principal/registrar')?>" method="POST" id="contacto-formulario">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-6 col-lg-6">
@@ -47,17 +47,7 @@
                                 <input type="email" name="email" required="required" placeholder="Email" id="email-contacto" >
                             </div>
 
-                            <div class="recaptcha-contacto">
-                            <div class="g-recaptcha" data-sitekey="6Lci1wATAAAAANURN2K1HROKcfukhtZ_2I8_WbRH"></div>
-                            <?php
-                                require_once( 'recaptchalib.php' ); 
-                                $publickey =  "6Lci1wATAAAAANURN2K1HROKcfukhtZ_2I8_WbRH" ;  // tienes esto desde la página de registro 
-                                recaptcha_get_html( $publickey );
-                                ?>
-
-                                <input  tipo = "submit" action="<?= site_url('principal/verify')?>"  /> 
-                            </div>
-                        </div>
+                           
                     </div>
 
                     <div class="row">
