@@ -30,6 +30,7 @@
 			$this->doc1				= $_POST['documento-identidad'];
 			$this->db->insert('persona',$this);
 			
+			redirect(site_url('principal/index'),'refresh');
 		}
 
 	}

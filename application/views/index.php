@@ -13,7 +13,7 @@
                             <img src="<?= $recursos ?>/img/slide1.jpg" class="adaptar">
                         </div>
                         <div class="item">
-                            <img src="<?= $recursos ?>/img/slide2.jpg" class="adaptar">
+                            <img   src="<?= $recursos ?>/img/slide2.jpg" class="adaptar" >
                         </div>
                         <div class="item">
                             <img src="<?= $recursos ?>/img/slide3.jpg" class="adaptar">
@@ -88,9 +88,11 @@
                             
                             <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 producto">
                                 <div class="empaquetado">
+                                <?php if($row->nuevo == 1): ?>
                                     <div class="etiqueta-nuevo">
                                         <span>NUEVO</span>
-                                    </div>
+                                    </div
+                                <?php endif; ?>
                                     <a href="#"><figure><img src="<?=$recursos.$row->imagen?>"></figure></a>
                                     <span class="temporada">Temporada <strong><?= $row->temporada?></strong></span>
                                     <div class="prenda-stock">

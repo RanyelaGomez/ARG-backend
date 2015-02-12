@@ -161,7 +161,7 @@
                <?php
                 $total = $carritos->num_rows(); 
                 if($total == 0){
-                  redirect('principal/no-encontrado');
+                  redirect(site_url('principal/noencontrado'),'refresh');
                 }
                 $i = 0;
                 $estado="";

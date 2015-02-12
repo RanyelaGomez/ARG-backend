@@ -54,7 +54,7 @@ $(document).ready(function(){
         };
         $.ajax({
                 data:  parametros,
-                url:   'http://localhost/ARG-backend-master/index.php/ajax/eliminar',
+                url:   'http://localhost/IHM-master/index.php/ajax/eliminar',
                 type:  'POST',
                 error: function(xhr, textStatus, error){
       				      console.log(xhr.statusText);

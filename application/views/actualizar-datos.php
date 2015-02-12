@@ -141,7 +141,7 @@
                           </div>
 
                           <div class="formulario">
-                            <form action="inc/procesaformulario.php" method="POST">
+                            <form action="<?=site_url('principal/actualizar')?>"method="POST">
                                     <div class="container">
                                         <div class="row form-inscrib">
                                               <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">

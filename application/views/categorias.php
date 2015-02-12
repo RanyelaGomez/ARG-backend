@@ -55,9 +55,11 @@
                 <!-- PRODUCTO 1 -->
                 <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3 producto producto-categoria">
                     <div class="empaquetado">
-                        <div class="etiqueta-nuevo">
-                            <span>NUEVO</span>
-                        </div>
+                        <?php if($row->nuevo == 1): ?>
+                            <div class="etiqueta-nuevo">
+                                <span>NUEVO</span>
+                            </div
+                        <?php endif; ?>
                         <a href="<?= site_url('principal/producto/'.$row->codigo)?>"><figure><img src="<?=$recursos.$row->imagen?>"></figure></a>
                         <span class="temporada">Temporada <strong><?= $row->temporada?></strong></span>
                         <div class="prenda-stock">
