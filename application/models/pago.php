@@ -1,19 +1,15 @@
 <?php
-
 	class Pago extends CI_Model{
 		var $monto 	= "";
 		var $serial_op 	= "";
 		var $direc_env 		= "";
 		var $fecha= "";
 		var $entidad_b   = "";
-
 		
 		
-
 		function __contruct(){
 			parent::__contruct();
 		}
-
 
 		function datos_pago(){
 			$this->entidad_b     = $_POST['doc'];
@@ -24,10 +20,6 @@
 		
 			$this->db->insert('pago',$this);
 
-			redirect(site_url('principal/carrito'), 'refresh');
-
+			redirect(site_url('principal/carrito'),'refresh');
 		}
-
-
-
 	}
