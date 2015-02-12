@@ -1,3 +1,11 @@
+    <!-- HEADER - CARRITO -->
+    <section class="titulo-carrito">
+        <div class="row usuario-carrito-banner text-center">
+           <h2> <?=$user['nombre'];?>, estás en tu carrito</h2>
+        </div>
+    </section>
+    
+    <!-- CUERPO DEL CARRITO - PRODUCTOS -->
     <section class="cuerpo-carrito">
         <div class="container">
             <div class="row">
