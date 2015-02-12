@@ -183,6 +183,14 @@ class Principal extends CI_Controller{
 			$this->load->view('footer_common',$this->Datos);
 		}
 
+		public function no_encontrado(){
+			
+			$this->load->view('no-encontrado',$this->Datos);
+			
+			$this->load->view('footer_common',$this->Datos);
+		}
+
+
 		public function categorias($tipo = null,$temporada = null,$preciomin = null,$preciomax = null){
 			$this->load->model('carrito');
 			
