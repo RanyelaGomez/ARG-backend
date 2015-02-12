@@ -168,10 +168,10 @@
                 $estado="";
                 for($i =0; $i < $total; $i++):
                   $row = $carritos->row($i);
-          print_r($row);
+          
                   if($i % 2 == 0){
                     echo "</div>";
-                    echo "<div class=\"row \">";
+                    echo "<div class=\" row \">";
                   }
 
               ?>
@@ -214,8 +214,9 @@
                             <!-- FIN SUMADOR -->                           
                         </div> 
                     </div>  
+                  </div>
                   <?php endfor;?>                
-                </div>
+                
 
                
 

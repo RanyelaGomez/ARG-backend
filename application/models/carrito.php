@@ -60,6 +60,15 @@
 			$query = $this->db->get();
 			return $query->row();
 		}
+		function contar(){
+			$this->db->select('*');
+			$this->db->from('personaproducto  a');
+			$this->db->join('producto b', 'a.idproducto = b.codigo');
+			$this->db->join('persona c','a.usuario = c.email');
+			$this->db->where('c.email',$this->session->userdata['email']);
+			$query = $this->db->get();
+			return $query->num_rows();
+		}
 
 		
 	}

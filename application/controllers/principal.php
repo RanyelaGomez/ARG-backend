@@ -21,6 +21,7 @@ class Principal extends CI_Controller{
 	}
 	public function index()
 	{
+		$this->load->model('carrito');
 	    $user = $this->facebook->getUser();
         if ($user) {
             try {
@@ -42,8 +43,10 @@ class Principal extends CI_Controller{
 
 
 		if((isset($this->session->userdata['email'])))
-		{	$this->load->model('producto');
+		{	
+			$this->load->model('producto');
 			$this->Datos['productos'] = $this->producto->all();
+			$this->Datos['contar'] = $this->carrito->contar();
 			$this->load->view('header2',$this->Datos); 
 			$this->load->view('index',$this->Datos); 
 			$this->load->view('footer',$this->Datos); 
@@ -98,13 +101,15 @@ class Principal extends CI_Controller{
 	}
 
 
-
-	public function pago(){
-
-		if(isset($this->session->userdata['email']))
+public function pago(){
+		$this->load->model('carrito');
+		if(isset($this->session->userdata['email'])){
 			$this->load->view('header2',$this->Datos); 
-		else
+			$this->Datos['contar'] = $this->carrito->contar();
+		}
+		else{
 			$this->load->view('header',$this->Datos); 
+		}
 
 		$this->load->view('carrito',$this->Datos);
 		$this->load->view('footer',$this->Datos);
@@ -118,8 +123,11 @@ class Principal extends CI_Controller{
 	}
 
 	public function contacto(){
-		if(isset($this->session->userdata['email']))
-			$this->load->view('header2',$this->Datos); 
+		$this->load->model('carrito');
+		if(isset($this->session->userdata['email'])){
+			$this->Datos['contar'] = $this->carrito->contar();
+			$this->load->view('header2',$this->Datos);
+		}
 		else
 			$this->load->view('header',$this->Datos); 
 		
@@ -133,13 +141,17 @@ class Principal extends CI_Controller{
 	}
 
 	public function carrito(){
-		$this->load->model('carrito');
+		
 		if(isset($this->session->userdata['email'])){
-			$this->load->view('header2',$this->Datos);
+			$this->load->model('carrito');
 			if($_POST){
 				
 				$this->carrito->insertar($_POST);
 			}
+			
+		    $this->Datos['contar'] = $this->carrito->contar();
+			$this->load->view('header2',$this->Datos);
+
 			$this->Datos['carritos'] = $this->carrito->mostrar();
 			$this->Datos['suma'] = $this->carrito->suma();
 			$this->load->view('carrito',$this->Datos);
@@ -160,7 +172,9 @@ class Principal extends CI_Controller{
 		redirect(site_url('principal/index'),'refresh');
 	}
 
-		public function actualizar(){ 
+		public function actualizar(){
+			$this->load->model('carrito'); 
+			$this->Datos['contar'] = $this->carrito->contar();
 			$this->load->model('update');				
 			$this->Datos['ex'] = $this->update->update();	
 		    $this->load->view('header2',$this->Datos);
@@ -181,6 +195,8 @@ class Principal extends CI_Controller{
 		}
 
 		public function categorias($tipo = null,$temporada = null,$preciomin = null,$preciomax = null){
+			$this->load->model('carrito');
+			$this->Datos['contar'] = $this->carrito->contar();
 			if($tipo == null){
 				redirect('principal/error');
 			}
@@ -224,6 +240,8 @@ class Principal extends CI_Controller{
 			
 		}
 		function producto($id){
+			$this->load->model('carrito');
+			$this->Datos['contar'] = $this->carrito->contar();
 			$this->load->model('producto');
 			$this->Datos['producto'] = $this->producto->find($id);
 			$this->Datos['imagenes'] = $this->producto->todaimagen($id);

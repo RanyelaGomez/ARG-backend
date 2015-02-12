@@ -51,7 +51,7 @@
 
                         <!-- FIN SUBMENU -->
 
-                      <button class="btn btn-default btn-superior" onclick="location.href='<?=site_url('principal/carrito') ?>'"><img src="<?= $recursos ?>/img/carrito-icono.png" alt="">Carrito: (4)</button>
+                      <button class="btn btn-default btn-superior" onclick="location.href='<?=site_url('principal/carrito') ?>'"><img src="<?= $recursos ?>/img/carrito-icono.png" alt="">Carrito: (<?= $contar ?>)</button>
                     </div>
             </div>
           
