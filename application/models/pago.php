@@ -17,15 +17,21 @@
 
 
 		function datos_pago(){
-			$this->entidad_b     = $_POST['name-bank'];
-			$this->monto   = $_POST['monto-pago'];
+			$this->entidad_b     = $_POST['doc'];
+			$this->monto   = $_POST['monto'];
 			$this->serial_op      = $_POST['serial'];
 			$this->fecha      = $_POST['date'];
 			$this->direc_env   = $_POST['mensaje'];
 		
 			$this->db->insert('pago',$this);
-			redirect(site_url('principal/carrito'),'refresh');
+
+			$this->db->where('usuario =',$this->session->userdata['email']);
+			$this->db->delete('personaproducto'); 
+
+			redirect(site_url('principal/exito'),'refresh');
 		}
+
+
 
 
 	}

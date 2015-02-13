@@ -85,7 +85,7 @@
                                                       </div>
                                                   </div>
                                                   <div class="col-xs-8 col-sm-8 col-md-8">
-                                                      <input type="text" name="monto-pago" required="required" id="monto-pago" >
+                                                      <input type="text" name="monto" required="required" id="monto-pago" >
                                                   </div>
                                             </div>
 
@@ -109,7 +109,7 @@
                                                   <div class="col-xs-8 col-sm-8 col-md-8">                                                      
                                                         <div class="form-group">
                                                             <div class='input-group date' id='calendario-ConfirmarPago'>
-                                                                <input type='text' class="form-control" id="calendario" />
+                                                                <input type='text' class="form-control" id="calendario" name="date"/>
                                                                 <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
                                                                 </span>
                                                             </div>

@@ -21,7 +21,7 @@
         -->
         <article class="contacto-formulario">
         
-            <form action="<?= site_url('principal/registrar')?>" method="POST" id="contacto-formulario">
+            <form action="<?= site_url('principal/contacto')?>" method="POST" id="contacto-formulario">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-6 col-lg-6">

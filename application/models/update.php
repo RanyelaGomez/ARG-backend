@@ -37,7 +37,7 @@ class update extends CI_Model
 			$this->db->where('email', $this->session->userdata['email']);
 			$this->db->update('persona', $data); 
 			
-			redirect(site_url('principal/index'), 'refresh');
+			redirect('principal/logout','refresh');
 
 			
 	      

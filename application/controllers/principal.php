@@ -108,25 +108,40 @@ class Principal extends CI_Controller{
 		else
 			$this->load->view('header',$this->Datos); 
 
+		if($_POST){
+			$this->load->model('contacto');
+			$this->contacto->subir();
+			redirect('principal/index');
+		}
 		$this->load->view('contacto',$this->Datos);
 		$this->load->view('footer',$this->Datos);
 		$this->load->view('footer_common',$this->Datos);
-		if($_POST){
-			$this->load->model('contacto');
-			$this->contacto->registrar();
-		}
+		
+
 	}
 
 
-
+	public function exito(){
+		$this->load->model('carrito');
+ 		$this->Datos['contar'] = $this->carrito->contar();
+		$this->load->model('producto');	
+		$this->Datos['productos'] = $this->producto->all();	
+		$this->load->view('header2',$this->Datos);
+		$this->load->view('exito',$this->Datos);
+		$this->load->view('footer',$this->Datos);
+		$this->load->view('footer_common',$this->Datos);
+	}
 
 	public function pagar(){
 		
 
 		
 		if($_POST){
+			
 			$this->load->model('pago');
 			$this->pago->datos_pago();
+
+
 
 		}
 		redirect('principal/carrito','refresh');
@@ -165,10 +180,13 @@ class Principal extends CI_Controller{
 
 	public function logout(){
 		if(isset($this->session->userdata['standalone']))
-			$this->session->sess_destroy();
+			if($this->session->userdata['standalone'] == true)
+				$this->session->sess_destroy();
 		if(isset($this->session->userdata['facebook'])){
-			$this->facebook->destroySession();
-			$this->session->sess_destroy();
+			if($this->session->userdata['facebook'] == true){
+				$this->facebook->destroySession();
+				$this->session->sess_destroy();
+			}
 		}
 		redirect(site_url('principal/index'),'refresh');
 	}
@@ -184,7 +202,9 @@ class Principal extends CI_Controller{
 			$this->load->view('footer_common',$this->Datos);
 			if($_POST){
 				$this->Datos['ex'] = $this->update->update();
+				
 			}
+			
 					
 		}
 

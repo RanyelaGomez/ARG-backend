@@ -298,14 +298,19 @@ figure{
     width: 2.5em;
 }
 
+.ola-ke-ase-facebook{
+    text-align: center;
+}
+
 .facebook-registro{
     background: #3b5999;
     border-radius: 2px;
     border-bottom: 0.3em solid #274271;
-    float: left;
-    padding: 0.5em 0.5em;
+    float: left;  
     margin-right: 1.5em;
-    margin-left: -1em;
+    margin-left: 10em;
+    text-align: center;
+    padding: 0.5em 0.5em;    
     width: 19em;
     text-decoration: none;
 }

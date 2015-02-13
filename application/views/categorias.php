@@ -58,7 +58,7 @@
                         <?php if($row->nuevo == 1): ?>
                             <div class="etiqueta-nuevo">
                                 <span>NUEVO</span>
-                            </div
+                            </div>
                         <?php endif; ?>
                         <a href="<?= site_url('principal/producto/'.$row->codigo)?>"><figure><img src="<?=$recursos.$row->imagen?>"></figure></a>
                         <span class="temporada">Temporada <strong><?= $row->temporada?></strong></span>
@@ -74,7 +74,7 @@
                 </div>     
                      
                 </div>
-
+                
 
                
 

@@ -52,15 +52,10 @@
                                 </div>
 
                                       <div class="row">
-                                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 tw">                                                
-                                                <a href="#" class="twitter-registro">
-                                                  <figure class="icono-registro-social"><img src="<?= $recursos ?>/img/twitter-icon-producto.png"></figure>
-                                                  <span><strong>Conectate con Twitter</strong></span>
-                                                </a> 
-                                            </div>
+                                           
 
                                             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                                                <a href="#" class="facebook-registro">
+                                                <a href="<?= $login_url?>" class="facebook-registro">
                                                   <figure class="icono-registro-social"><img src="<?= $recursos ?>/img/facebook-icon-producto.png"></figure>
                                                   <span><strong>Conectate con Facebook</strong></span>
                                                 </a>
@@ -102,20 +97,14 @@
                                 </div>
 
                                 <div class="row">
-                                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 tw">                                                
-                                        <a href="#" class="twitter-registro">
-                                          <figure class="icono-registro-social"><img src="<?= $recursos ?>/img/twitter-icon-producto.png"></figure>
-                                          <span><strong>Ingresar con Twitter</strong></span>
-                                        </a> 
-                                    </div>
+                                    
 
-                                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                                        <a href="#" class="facebook-registro">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                        <a href="<?= $login_url?>" class="facebook-registro">
                                           <figure class="icono-registro-social"><img src="<?= $recursos ?>/img/facebook-icon-producto.png"></figure>
                                           <span><strong>Ingresar con Facebook</strong></span>
                                         </a>
-                                    </div>
-                              </div>  
+                                    </div>  
 
                                 <div class="formulario-login">
                                         <form action="<?= site_url('principal/index')?>" method="POST" id="formulario-login"> 

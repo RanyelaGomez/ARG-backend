@@ -45,8 +45,7 @@
 
 $(document).ready(function(){
     $('.borrar-articulo-carrito').click(function(){
-        alert($('#codigo').val());
-                alert($('#email').val());
+       
        var parametros = {
                 "idproducto" : $('#codigo').val(),
                 "email" : $('#email').val(),
@@ -54,7 +53,7 @@ $(document).ready(function(){
         };
         $.ajax({
                 data:  parametros,
-                url:   'http://localhost/IHM-master/index.php/ajax/eliminar',
+                url:   'http://localhost/code/index.php/ajax/eliminar',
                 type:  'POST',
                 error: function(xhr, textStatus, error){
       				      console.log(xhr.statusText);
